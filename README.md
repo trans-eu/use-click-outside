@@ -15,7 +15,7 @@ The hook returns an object with `ref` and `onClickCapture` properties that shoul
 
 Property         | Description
 ---------------- | ------------
-`ref`            | A ref object created by the [useRef](https://reactjs.org/docs/hooks-reference.html#useref) hook with an uninitilized `.current` property.
+`ref`            | A ref object created by the [useRef](https://reactjs.org/docs/hooks-reference.html#useref) hook with an uninitialized `.current` property.
 `onClickCapture` | An event handler for the click event in the capture phase.
 
 
@@ -29,7 +29,7 @@ const Example = () => {
     console.log('Click outside');
   }, []);
 
-  const { ref, onClickCapture } = useClickOutisde(onClickOutside);
+  const { ref, onClickCapture } = useClickOutside(onClickOutside);
 
   return (
     <div ref={ref} onClickCapture={onClickCapture}>
