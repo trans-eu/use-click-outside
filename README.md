@@ -23,6 +23,7 @@ Property         | Description
 
 ```jsx
 import React, { useCallback } from 'react';
+import useClickOutside from '@trans.eu/use-click-outside';
 
 const Example = () => {
   const onClickOutside = useCallback(() => {
