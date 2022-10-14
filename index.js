@@ -1,44 +1,41 @@
-import { useEffect, useRef, useCallback } from 'react';
+import { useLayoutEffect, useRef, useCallback } from 'react';
 
-const noop = () => {};
-
-const useClickOutside = (fn = noop) => {
-    const lastTarget = useRef();
+const useClickOutside = (onOutsideClick) => {
     const containerRef = useRef();
+    const callbackTimeoutId = useRef();
 
-    useEffect(() => {
+    useLayoutEffect(() => {
+        if (!onOutsideClick) {
+            return undefined;
+        }
+
         let timeoutId;
-        const clickHandler = (event) => {
-            // This event will be called each time click event is captured in the target owner document.
+        const clickHandler = () => {
+            // This event handler will always be called, as long as the Component using this hook
+            // is mounted. It will be called each time click event is captured in the document.
             // Because it is attached to the document object, it will be called before the React
-            // onClickCapture event handler, which is attached to the app root element (document's descendant).
-            // That's why check must be postponed - to make sure the React's handler executes first.
-            timeoutId = setTimeout(() => {
-                // If event target is different than last react handler target
-                // this muse be an outside click event.
-                if (lastTarget.current !== event.target) {
-                    fn();
-                    // Cleanup event target to prevent memory leaks.
-                    lastTarget.current = null;
-                }
-            }, 0);
+            // onClickCapture event handler which is attached to the 'root' element (document's descendant).
+            // That's why we need to postpone it one loop cycle, to make sure the React's handler
+            // executes first.
+            timeoutId = setTimeout(onOutsideClick, 0);
+            callbackTimeoutId.current = timeoutId;
         };
 
-        // use ownerDocument because node could be portaled into other browser window
         const targetDocument = containerRef.current.ownerDocument;
         targetDocument.addEventListener('click', clickHandler, { capture: true });
 
         return () => {
-            // Clear all things that could be leaked.
+            // Clear all things that could be leaked in between applying effect.
             clearTimeout(timeoutId);
-            lastTarget.current = null;
             targetDocument.removeEventListener('click', clickHandler, { capture: true });
         };
-    }, [fn]);
+    }, [onOutsideClick]);
 
-    const onClickCapture = useCallback((event) => {
-        // Save event target on click to compare it with target in document dom click handler.
-        lastTarget.current = event.target;
+    const onClickCapture = useCallback(() => {
+        // This is React's event handler. If it executes, it means that there was no outside click
+        // and the current timeout is cleared
+
+        clearTimeout(callbackTimeoutId.current);
     }, []);
 
     return { ref: containerRef, onClickCapture };
