@@ -1,5 +1,5 @@
 {
-  "name": "use-click-outside",
+  "name": "@trans.eu/use-click-outside",
   "version": "1.0.0",
   "description": "A React hook for detecting click events outside of an element.",
   "main": "index.js",
