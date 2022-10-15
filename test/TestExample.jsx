@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import useClickOutside from '../';
 
@@ -23,10 +22,4 @@ export const TestExample = ({
       </div>
     </>
   );
-};
-
-TestExample.propTypes = {
-  withRefId: PropTypes.string,
-  withoutRefId: PropTypes.string,
-  onClickOutside: PropTypes.func,
 };

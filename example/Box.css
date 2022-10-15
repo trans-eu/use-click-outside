@@ -1,0 +1,13 @@
+.wrapper,
+.highlight {
+    border: 10px dashed rgb(240, 240, 240);
+    border-radius: 10px;
+    padding: 40px 20px;
+    margin: 20px;
+    transition: background 0.25s ease-in-out, border 0.25s ease-in-out;
+}
+
+.highlight {
+    background: rgb(236, 241, 248);
+    border-color: rgb(205, 223, 244);
+}
