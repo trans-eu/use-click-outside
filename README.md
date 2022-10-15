@@ -2,6 +2,7 @@
 
 A React hook for detecting click events outside of an element.
 
+## [Live example](https://trans-eu.github.io/use-click-outside)
 
 ## Usage
 
@@ -40,7 +41,7 @@ const Example = () => {
 }
 ```
 
-## Live example
+## Local example
 
 ```
 git clone https://github.com/trans-eu/use-click-outside.git

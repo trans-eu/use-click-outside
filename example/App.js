@@ -30,7 +30,7 @@ const ElementWithPortal = ({ children }) => {
 const App = () => (
     <>
         <h1>{pkgInfo.name} ({pkgInfo.version})</h1>
-        <p><a href={pkgInfo.homepage} target="_blank">README</a></p>
+        <p><a href={pkgInfo.homepage} target="_blank">README</a> | <a href="https://github.com/trans-eu/use-click-outside/tree/main/example">Code</a></p>
         <Element />
         <ElementWithPortal />
     </>
