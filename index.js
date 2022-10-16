@@ -33,8 +33,6 @@ const useClickOutside = (onOutsideClick) => {
 
     const onClickCapture = useCallback(() => {
         // This is React's event handler. If it executes, it means that there was no outside click
-        // and the current timeout is cleared
-
         clearTimeout(callbackTimeoutId.current);
     }, []);
 

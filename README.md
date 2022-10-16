@@ -1,8 +1,13 @@
 # useClickOutside
 
 A React hook for detecting click events outside of an element.
-
 ## [Live example](https://trans-eu.github.io/use-click-outside)
+
+
+Why use this library?
+* it works even when some `onClick` handler does `event.stopPropagation()`
+* it works with [new window portals](https://medium.com/hackernoon/using-a-react-16-portal-to-do-something-cool-2a2d627b0202)
+* it does not treat click on element's portal as external clicks
 
 ## Usage
 
