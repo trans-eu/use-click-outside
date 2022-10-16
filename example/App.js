@@ -34,7 +34,7 @@ const App = () => {
     return (
         <>
             <h1>{pkgInfo.name} ({pkgInfo.version})</h1>
-            <p><a href={pkgInfo.homepage} target="_blank">README</a></p>
+            <p><a href={pkgInfo.homepage} target="_blank">README</a> | <a href="https://github.com/trans-eu/use-click-outside/tree/main/example">Code</a></p>
             <Element>Element #1</Element>
             <ElementWithPortal>Element #2</ElementWithPortal>
             <button onClick={() => setOpen(prev => !prev)}>{open ? 'close' : 'open'} new window</button>

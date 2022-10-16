@@ -1,6 +1,8 @@
 # useClickOutside
 
 A React hook for detecting click events outside of an element.
+## [Live example](https://trans-eu.github.io/use-click-outside)
+
 
 Why use this library?
 * it works even when some `onClick` handler does `event.stopPropagation()`
@@ -44,7 +46,7 @@ const Example = () => {
 }
 ```
 
-## Live example
+## Local example
 
 ```
 git clone https://github.com/trans-eu/use-click-outside.git
