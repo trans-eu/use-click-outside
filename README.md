@@ -19,7 +19,7 @@ Property         | Description
 `onClickCapture` | An event handler for the click event in the capture phase.
 
 
-## Example
+## Example code
 
 ```jsx
 import React, { useCallback } from 'react';
@@ -39,3 +39,14 @@ const Example = () => {
   );
 }
 ```
+
+## Live example
+
+```
+git clone https://github.com/trans-eu/use-click-outside.git
+cd ./use-click-outside
+npm install
+npm run start
+```
+
+and open `http://localhost:8080/` in your browser
