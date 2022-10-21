@@ -10,14 +10,14 @@ const useClickOutside = (onOutsideClick) => {
         }
 
         let timeoutId;
-        const clickHandler = () => {
+        const clickHandler = (event) => {
             // This event handler will always be called, as long as the Component using this hook
             // is mounted. It will be called each time click event is captured in the document.
             // Because it is attached to the document object, it will be called before the React
             // onClickCapture event handler which is attached to the 'root' element (document's descendant).
             // That's why we need to postpone it one loop cycle, to make sure the React's handler
             // executes first.
-            timeoutId = setTimeout(onOutsideClick, 0);
+            timeoutId = setTimeout(onOutsideClick, 0, event);
             callbackTimeoutId.current = timeoutId;
         };
 
