@@ -22,6 +22,7 @@
     "url": "https://github.com/trans-eu/use-click-outside/issues"
   },
   "homepage": "https://github.com/trans-eu/use-click-outside#readme",
+  "keywords": ["react", "hook", "outside click", "onClickOutside", "onOutsideClick", "useClickOutside", "useOutsideClick"],
   "publishConfig": {
     "access": "public"
   },

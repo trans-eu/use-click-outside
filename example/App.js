@@ -33,7 +33,7 @@ const App = () => {
 
     return (
         <>
-            <h1>{pkgInfo.name} ({pkgInfo.version})</h1>
+            <h1>{pkgInfo.name}</h1>
             <p><a href={pkgInfo.homepage} target="_blank">README</a> | <a href="https://github.com/trans-eu/use-click-outside/tree/main/example">Code</a></p>
             <Element>Element #1</Element>
             <ElementWithPortal>Element #2</ElementWithPortal>
